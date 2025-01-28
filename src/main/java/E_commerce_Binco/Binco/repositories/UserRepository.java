@@ -3,5 +3,9 @@ package E_commerce_Binco.Binco.repositories;
 import E_commerce_Binco.Binco.domain.entities.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepositoty extends JpaRepository<User, Long> {
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, String> {
+    Optional<User> findByEmail(String email);
 }
+
